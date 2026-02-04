@@ -1,14 +1,14 @@
-from PyQt5.QtCore import Qt, QTimer, QTime, QLocale
-from PyQt5.QtGui import QDoubleValidator, QIntValidator, QFont 
-from PyQt5.QtWidgets import (
-        QApplication, QWidget,
-       QHBoxLayout, QVBoxLayout, QGridLayout,
-       QGroupBox, QRadioButton,
-       QPushButton, QLabel, QListWidget, QLineEdit)
+from PyQt5.QtCore import Qt, QTimer,QTime,QLocale
+from PyQt5.QtGui import QDoubleValidator, QIntValidator, QFont
+from PyQt5.QtWidgets import(
+    QApplication, QWidget,
+    QHBoxLayout, QVBoxLayout, QGridLayout,
+    QGroupBox, QRadioButton,
+    QPushButton, QLabel, QListWidget, QLineEdit)
 from instr import *
 from second_win import *
 
-class MainWin(QWidget):
+class Mainwin(QWidget):
     def __init__(self):
         super().__init__()
         self.set_appear()
@@ -22,7 +22,7 @@ class MainWin(QWidget):
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.hello_text, alignment = Qt.AlignLeft)
         self.layout.addWidget(self.instruction, alignment = Qt.AlignLeft)
-        self.layout.addWidget(self.btn_next, alignment = Qt.AlignCenter)         
+        self.layout.addWidget(self.btn_next, alignment = Qt.AlignCenter)
         self.setLayout(self.layout)
     def next_click(self):
         self.tw = TestWin()
@@ -34,7 +34,7 @@ class MainWin(QWidget):
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
 def main():
-    app = QApplication([])
-    mw = MainWin()
-    app.exec_()
+        app = QApplication([])
+        mw = Mainwin()
+        app.exec_()
 main()
